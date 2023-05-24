@@ -4,7 +4,7 @@ A simple discord bot that listens to events coming from the MGO1 server and exec
 
 ---
 
-The bot is intend to work on the /stream/events websocket made available by the REST API provided by the (TX-55 MGO1 repository)[https://github.com/underscore-zi/tx55].
+The bot is intend to work on the /stream/events websocket made available by the REST API provided by the [TX-55 MGO1 repository](https://github.com/underscore-zi/tx55).
 
 For the "offical" revived server run by SaveMGO.com this is exposed at:
  - `wss://api.mgo1.savemgo.com/api/v1/stream/events`
