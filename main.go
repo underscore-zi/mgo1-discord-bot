@@ -44,8 +44,6 @@ func newGame(lobby int, data map[string]interface{}) {
 		message.WriteString(" - ")
 		message.WriteString(gameLink)
 	}
-	message.WriteString(" - ")
-	message.WriteString(fmt.Sprintf("https://mgo1.savemgo.com/games/%d", gameID))
 
 	go func() { _ = ExecuteDiscordWebhook(message.String()) }()
 
