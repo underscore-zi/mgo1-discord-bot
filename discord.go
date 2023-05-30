@@ -9,13 +9,25 @@ import (
 
 var DiscordWebhookURL string
 
+type DiscordMentionKey string
+
+const (
+	MentionParse DiscordMentionKey = "parse"
+	//MentionRoles DiscordMentionKey = "roles"
+	//MentionUsers DiscordMentionKey = "users"
+)
+
 type DiscordWebhookMessage struct {
-	Content string `json:"content"`
+	Content         string                         `json:"content"`
+	AllowedMentions map[DiscordMentionKey][]string `json:"allowed_mentions,omitempty"`
 }
 
 func ExecuteDiscordWebhook(message string) error {
 	payload := DiscordWebhookMessage{
 		Content: message,
+		AllowedMentions: map[DiscordMentionKey][]string{
+			MentionParse: {},
+		},
 	}
 
 	payloadBytes, err := json.Marshal(payload)
